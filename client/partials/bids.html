@@ -1,0 +1,47 @@
+<div class='container'>
+  <div class='row'>
+    <h1>Bid Now!</h1>
+    <button class='btn btn-danger pull-right' ng-click="logout()">Logout</button>
+  </div><!-- row-->
+
+  <div class='row'>
+    <div ng-if='allProducts'>
+      <div ng-if='bidError'>
+        <p ng-repeat='error in bidError' ng-bind='error'></p>
+      </div><!-- bidError -->
+      <div ng-repeat='product in allProducts'>
+        <div ng-controller='bidsController'>
+          <div class='col-md-4'>
+            <div class='row'>
+              <img src='{{product.img}}' class='thumbnail'>
+            </div><!-- row-->
+
+            <div class='row'>
+              <form ng-submit='submitBid()' novalidate>
+                <input type='hidden' ng-model="productId" ng-init='productId=product._id'>
+                $ <input type='number' min='1' step='any' ng-model='bidAmt' required>
+                <input type='submit' class='btn btn-sm btn-primary' value='Bid'>
+              </form>
+            </div>
+
+            <div class='row'>
+              <h4>Current Bids</h4>
+              <div class='currentBids'>
+                <div ng-repeat="bids in product.bids | filter:search | orderBy:'-amount'">
+                  <p>{{bids._user}}: ${{bids.amount}}</p>
+                </div>
+              </div><!-- current bids -->
+              <div class='searchBar'>
+                <input type='text' ng-model='search' placeholder='Filter..'>
+              </div>
+            </div><!--row-->
+          </div><!-- col-md-4 -->
+        </div>
+      </div>
+    </div><!-- if allProducts -->
+  </div><!-- row -->
+
+  <div class='row'>
+    <button class='btn btn-danger pull-right' ng-click='endBid()'>End Bid</button>
+  </div><!-- row -->
+</div>

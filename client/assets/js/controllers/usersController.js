@@ -24,7 +24,7 @@ app.controller('usersController', ['$scope', 'userFactory', '$location', '$cooki
 
         } else if (typeof(returnedData.Success) !== 'undefined'){
           $cookies.putObject('user', returnedData.Success);
-          $location.url('/results');
+          $location.url('/bids');
         };
       });
     } else {

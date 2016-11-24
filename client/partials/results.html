@@ -1,4 +1,23 @@
-<div>
-  <p>{{userInSession}}</p>
-  <button ng-click='logout()'>Log Out</button>
-</div>
+<div class='container'>
+  <div class='row'>
+    <h1>{{username}} ended the Bid.</h1>
+    <button class='btn btn-danger pull-right' ng-click="logout()">Logout</button>
+  </div><!-- row-->
+  <div class='row'>
+    <h3>Highest Bidder per Product</h3>
+  </div><!-- row -->
+
+  <div class='row'>
+    <div ng-repeat="product in allProducts">
+      <img src='{{product.img}}' class='thumbnail'>
+      <div ng-repeat="bid in product.bids | orderBy:'-amount' | limitTo: 1 ">
+        <p>{{bid._user}}</p>
+        <p>${{bid.amount}}</p>
+      </div>
+    </div>
+  </div><!-- row -->
+
+  <div class='row'>
+    <button ng-click='restart()' class='btn btn-lg btn-success pull-right'>Start Bid</button>
+  </div><!-- row -->
+</div><!-- container -->
