@@ -3,8 +3,8 @@ html, body {
 }
 
 .thumbnail {
-  width: 150px;
-  height: 275px;
+  width: 275px;
+  height: 150px;
 }
 
 .fixedHeight {
