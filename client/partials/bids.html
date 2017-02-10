@@ -9,7 +9,7 @@
       <div ng-if='bidError'>
         <p ng-repeat='error in bidError' ng-bind='error'></p>
       </div><!-- bidError -->
-      <div ng-repeat='product in allProducts'>
+      <div ng-repeat='product in allProducts | orderBy:"product._id"'>
         <div ng-controller='bidsController'>
           <div class='col-md-5 fixedHeight'>
 
