@@ -1,4 +1,66 @@
+html, body {
+  box-sizing: border-box;
+}
+
 .thumbnail {
   width: 100px;
   height: 100px;
+}
+
+.fixedHeight {
+  height: 400px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bidFormDiv{
+  text-align: center;
+}
+
+.currentBidDiv{
+  width: 232px;
+  margin-top: 5px;
+  border-radius: 4px;
+  background-color: rgba(71, 255, 135, 0.4);
+  padding-bottom: 4px;
+}
+
+.currentBidHeader {
+  text-align: center;
+}
+
+.currentBids {
+  max-height: 100px;
+  overflow: auto;
+  margin-bottom: 5px;
+  background-color: rgba(71, 255, 135, 0.15);
+}
+
+.searchBar {
+  text-align: center;
+}
+
+#resultHeader{
+  text-align: center;
+}
+
+.resultRow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultDivs {
+  margin-right: 10px;
+}
+
+.productDescription {
+  text-align: center;
 }
